@@ -1,8 +1,6 @@
 //import necessary dependencies
-
 const express = require('express');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const db = require('./config/db');
@@ -31,6 +29,12 @@ app.use(session({
     maxAge: 6*60*60*1000
   }
 }));
+
+// Import auth routes
+const authRoutes = require('./router/auth'); 
+
+// Middleware for auth routes
+app.use('/auth', authRoutes);
 
 
 // Serve static files from the 'frontend' directory

@@ -1,11 +1,31 @@
+
 const registerForm = document.getElementById('register-form');
 const loginForm = document.getElementById('login-form');
 
-registerForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username = document.getElementById('username').value;
-    alert(`${username} has been registered!`);
-    window.location.href = 'login.html';
+registerForm.addEventListener('submit', async(e) => {
+    e.preventDefault(); //prevent default form behaviour
+    //collect form input
+    const email = document.getElementById('regEmail').value;
+    const username = document.getElementById('regUsername').value;
+    const password = document.getElementById('regPassword').value;
+    //send a post request to the server to register user
+    const response = await fetch('/auth/register',{
+        method:'POST',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        //prepare data as json to be sent too backend
+        body:JSON.stringify({email, username, password})
+    })
+    //parse the response from the server
+    const result = await response.json();
+    //handle the response based on status code
+    if(response.status===201){
+        alert(result.message);
+        registerForm.reset();
+    } else{
+        alert(result.message);
+    }
 });
 
 loginForm?.addEventListener('submit', (e) => {
