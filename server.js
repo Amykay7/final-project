@@ -8,6 +8,7 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const path = require('path');
 const dotenv = require('dotenv');
+const plannerRoutes = require('./router/plannerRoute');
 
 //load environment variables
 dotenv.config();
@@ -39,6 +40,15 @@ app.use('/auth', authRoutes);
 
 // Serve static files from the 'frontend' directory
 app.use(express.static(path.join(__dirname, 'frontend')));
+
+
+//planner
+// Middleware
+app.use(bodyParser.json());  // Parse JSON bodies
+app.use(bodyParser.urlencoded({ extended: true }));  // Parse URL-encoded data
+
+// Routes
+app.use('/api/planner', plannerRoutes);  // Use planner routes for all /api/planner endpoints
 
 // Start the server
 const PORT = process.env.PORT || 5000;
