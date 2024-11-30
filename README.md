@@ -1,4 +1,5 @@
 GreenHive - Grocery Planner
+
 GreenHive is a web-based grocery planner designed to help users organize and manage their shopping lists. The platform allows users to create, edit, and categorize grocery items, all while providing an easy-to-use, responsive interface for a seamless shopping experience.
 
 Table of Contents
