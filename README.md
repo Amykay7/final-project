@@ -47,10 +47,13 @@ Upcoming Features:
 
 Technologies Used
 
-HTML5: Provides the structural foundation of the web pages.
-CSS3: Adds styling and ensures responsiveness across devices.
-JavaScript: Powers the interactive features, including adding, editing, and removing items.
-LocalStorage: Persists grocery lists in the browser, allowing users to save and load them for future use.
+- HTML5: Provides the structural foundation of the web pages.
+
+- CSS3: Adds styling and ensures responsiveness across devices.
+- 
+- JavaScript: Powers the interactive features, including adding, editing, and removing items.
+  
+- LocalStorage: Persists grocery lists in the browser, allowing users to save and load them for future use.
 
 License
 This project is licensed under the MIT License
