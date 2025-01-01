@@ -3,21 +3,21 @@ const router = express.Router();
 const plannerController = require('../controllers/plannerController');
 
 // Route to add a meal to the weekly planner
-router.post('/meal', plannerController.addMeal);
+router.post('/api/planner/meal', plannerController.addMeal);
 
 // Route to get the weekly planner
-router.get('/meal', plannerController.getWeeklyPlan);
+router.get('/api/planner/weeklymeal', plannerController.getWeeklyPlan);
 
 // Route to add an item to the shopping list
-router.post('/item', plannerController.addItem);
+router.post('/api/planner/item', plannerController.addItem);
 
 // Route to get the shopping list
-router.get('/item', plannerController.getShoppingList);
+router.get('/api/planner/item', plannerController.getShoppingList);
 
 // Route to delete an item from the shopping list
-router.delete('/item/:itemName', plannerController.deleteItem);
+router.delete('/api/planner/item/:itemName', plannerController.deleteItem);
 
 // Route to delete a meal from the weekly planner
-router.delete('/meal/:day', plannerController.deleteMeal);
+router.delete('/api/planner/meal/:day', plannerController.deleteMeal);
 
 module.exports = router;
